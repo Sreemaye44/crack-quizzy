@@ -4,6 +4,10 @@ import Navbar from './components/Navbar/Navbar';
 import Header from './components/Header/Header';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './components/Link/Main';
+import Statistics from './components/Statistics/Statistics';
+import Blog from './components/Blog/Blog';
+import Home from './components/Home/Home';
+import QuizQuestion from './components/QuizQuestion/QuizQuestion';
 
 function App() {
   const router=createBrowserRouter([
@@ -11,8 +15,25 @@ function App() {
     element:<Main></Main>,
     children:[
       {path:'/',
-      element:<Header></Header>
+      loader: ()=>fetch('https://openapi.programming-hero.com/api/quiz'),
+      element:<Home></Home>
+      },
+    
+     {
+      path: '/quiz/:quizId',
+      loader:async({params})=>{
+        
+        return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)
+      },
+      element:<QuizQuestion></QuizQuestion>
+     },
+      {path:'/statistic',
+      element:<Statistics></Statistics>
+      },
+      {path:'/blog',
+      element:<Blog></Blog>
       }
+      
       
     ],
     
@@ -20,6 +41,8 @@ function App() {
   {path:'/*',
       element:<div><h2>Not found</h2></div>
       }
+  
+
   ]);
   return (
     <div className="App">
