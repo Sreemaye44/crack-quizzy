@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Options from '../Options/Options';
-import {EyeIcon} from '@heroicons/react/24/solid'
+import {EyeIcon} from '@heroicons/react/24/solid';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const SingleQuestion = ({singleQuestion}) => {
     console.log('single',singleQuestion);
@@ -8,8 +10,10 @@ const SingleQuestion = ({singleQuestion}) => {
     const{question,options,correctAnswer}=singleQuestion;
 
     const handleCorrectAnswer=()=>{
-         
-    }
+        toast.success(correctAnswer, {
+            position: toast.POSITION.TOP_CENTER
+    });
+}
     
     const questionSplit=question.split('<p>').join('').split('</p>').join('');
     return (
@@ -18,6 +22,7 @@ const SingleQuestion = ({singleQuestion}) => {
             <h3 className='text-2xl font-semibold mb-5 text-orange-600'>{questionSplit}</h3>
             <EyeIcon className='w-6 h-6' onClick={handleCorrectAnswer}></EyeIcon>
             </div>
+            <ToastContainer />
 
             <div className='grid grid-cols-2'>
            {
