@@ -1,13 +1,13 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const Statistics = () => {
     const quizzes= useLoaderData().data;
     return (
-        <div className='container w-9/12 mx-auto my-20'>
-            
-            <LineChart width={600} height={300} data={quizzes}>
+        <div className='container  md:w-9/12 mx-auto my-20'>
+            <ResponsiveContainer width='80%' height={300}>
+            <LineChart  data={quizzes}>
             <Line type="monotone" dataKey="total" stroke="#8884d8" />
           <XAxis dataKey="name" />
           <CartesianGrid stroke="#ccc" />
@@ -15,6 +15,8 @@ const Statistics = () => {
           <YAxis />
 
             </LineChart>
+            </ResponsiveContainer>
+            
         </div>
     );
 };

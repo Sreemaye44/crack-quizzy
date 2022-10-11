@@ -17,7 +17,7 @@ const Options = ({option,correctAnswer}) => {
     }
 
     return (
-        <div className='bg-green-300 py-5 shadow shadow-green-700/40 m-3 w-9/12 mx-auto rounded-md'>
+        <div className='container bg-green-300 py-5 shadow shadow-green-700/40 m-3 md:w-9/12 mx-auto rounded-md'>
             <input type="radio" id="option" name="fav_answer" onClick={ () => handleAnswer(option)} value="option"/>
             <label className='px-2 text-lg' for="option">{option}</label>  
             <ToastContainer />
