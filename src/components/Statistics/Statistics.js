@@ -8,7 +8,7 @@ const Statistics = () => {
         <div className='container  md:w-9/12 mx-auto my-20'>
             <ResponsiveContainer width='80%' height={300}>
             <LineChart  data={quizzes}>
-            <Line type="monotone" dataKey="total" stroke="#8884d8" />
+            <Line type="monotone" dataKey="total" stroke="green" />
           <XAxis dataKey="name" />
           <CartesianGrid stroke="#ccc" />
           <Tooltip></Tooltip>

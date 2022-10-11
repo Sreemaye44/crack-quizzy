@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
            <Header></Header>
-           <div className='w-10/12 mx-auto md:flex gap-4 mb-5'>
+           <div className='w-10/12 mx-auto my-5 md:flex gap-4'>
             
             {
                 quizzes.map(quiz=><Quiz key={quiz.id} quiz={quiz}></Quiz>)

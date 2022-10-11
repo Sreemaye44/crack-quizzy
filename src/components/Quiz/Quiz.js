@@ -13,7 +13,7 @@ const Quiz = ({quiz}) => {
   </div>
   <div class="px-6 pt-4 pb-2">
     <h3 class=" bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Total Questions: {total}</h3>
-    <Link to={`./quiz/${id}`}><button class=" bg-slate-700 w-full rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Practice Now!</button></Link>
+    <Link to={`./quiz/${id}`}><button class=" bg-slate-700 w-full rounded-full px-3 py-1 font-semibold text-white mr-2 mb-2 hover:bg-green-500">Practice Now!</button></Link>
 
   </div>
 </div>
