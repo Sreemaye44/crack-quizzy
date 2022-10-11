@@ -28,6 +28,7 @@ function App() {
       element:<QuizQuestion></QuizQuestion>
      },
       {path:'/statistic',
+      loader: ()=>fetch('https://openapi.programming-hero.com/api/quiz'),
       element:<Statistics></Statistics>
       },
       {path:'/blog',
