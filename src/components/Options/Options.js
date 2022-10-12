@@ -10,15 +10,17 @@ const Options = ({option,correctAnswer}) => {
            if(correctAnswer===option)
            {
              setCount(count+1);
+             
             toast.info("Congrats! Your answer is right", { theme: "light" });
            }
            else
            {
-            setCount(count-1);
+
              toast("Sorry!Wrong Answer! Try Again");
              
            }
-           console.log( setCount);
+           console.log(count);
+           
     }
 
     return (
