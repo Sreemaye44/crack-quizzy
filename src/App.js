@@ -8,6 +8,7 @@ import Statistics from './components/Statistics/Statistics';
 import Blog from './components/Blog/Blog';
 import Home from './components/Home/Home';
 import QuizQuestion from './components/QuizQuestion/QuizQuestion';
+import Notfound from './components/Notfound/Notfound';
 
 function App() {
   const router=createBrowserRouter([
@@ -52,7 +53,7 @@ function App() {
     
   },
   {path:'/*',
-      element:<div><h2>Not found</h2></div>
+      element:<Notfound></Notfound>
       }
   
 

@@ -1,16 +1,24 @@
 import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
-import { QuizMarksContext } from "../QuizQuestion/QuizQuestion";
+import { DeductMarksContext, QuizMarksContext } from "../QuizQuestion/QuizQuestion";
 
 const Options = ({ option, correctAnswer }) => {
+
   const [marks,setMarks]=useContext(QuizMarksContext);
+  const [wrong,setWrong]=useContext(DeductMarksContext);
   const handleAnswer = (selectedOption) => {
     if (correctAnswer === selectedOption) {
       setMarks(marks+1);
-      toast.success("Congrats! Your answer is right");
+      toast.success("Congrats! Your answer is right",{
+        position: toast.POSITION.TOP_CENTER,
+      });
     } else {
-      toast.error("Sorry!Wrong Answer! Try Again");
+      setWrong(wrong+1);
+      toast.error("Sorry!Wrong Answer! Try Again",{
+        position: toast.POSITION.TOP_CENTER,
+      });
     }
+    
   };
 
   return (

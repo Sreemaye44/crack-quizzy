@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className='py-8  px-20 md:flex justify-between'>
         <div className='flex px-10'>
         <img src="https://quizizz.com/media/resource/gs/quizizz-media/quizzes/fe37cb45-e033-47b0-8c8a-c4d5437e6ecb?w=200&h=200" className='h-15 w-10'alt="" />
-        <h1 className='text-4xl font-extrabold'><span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500 px-10">CRACK QUIZ</span></h1>
+        <h1 className='text-4xl font-extrabold'><span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500 px-10">CRACK QUIzZY</span></h1>
         </div>
         <ul className={`md:flex absolute md:static ease-in duration-500 ${open?'top-6 left-0':'top-[-120px] left-0'}`}>
         <li className='md:ml-10 text-xl text-white hover:bg-green-600 p-1 rounded-lg'><NavLink className={({isActive})=>isActive? 'bg-green-600 p-1 rounded-lg text-2xl':undefined} to={'/home'}>Home</NavLink></li>
