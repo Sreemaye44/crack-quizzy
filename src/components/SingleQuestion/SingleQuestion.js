@@ -5,7 +5,6 @@ import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
 const SingleQuestion = ({singleQuestion,index}) => {
-    console.log('single',singleQuestion,index);
 
     const{question,options,correctAnswer}=singleQuestion;
 
@@ -22,16 +21,14 @@ const SingleQuestion = ({singleQuestion,index}) => {
             <h3 className='text-2xl font-semibold mb-5 text-orange-600'>{index+1}. {questionSplit}</h3>
             <EyeIcon className='w-6 h-6' onClick={handleCorrectAnswer}></EyeIcon>
             </div>
-            <ToastContainer />
 
             <div className='md:grid grid-cols-2'>
            {
-            options.map(option=>
-            <Options option={option} correctAnswer={correctAnswer}></Options>
+            options.map((option,index)=>
+            <Options key={index} option={option} correctAnswer={correctAnswer}></Options>
             )
             }
             </div>
-           
         </div>
     );
 };
